@@ -61,7 +61,8 @@ React.Children.only(children)
 // especially if you want to reorder or slice this.props.children before passing it down.
 React.Children.toArray(children)
 
-// The React.Fragment component lets you return multiple elements in a render() method without creating an additional DOM element
+// The React.Fragment component lets you return multiple elements in a render() method without
+// creating an additional DOM element
 // You can also use it with the shorthand <></> syntax.
 React.Fragment
 
@@ -91,7 +92,8 @@ class Component extends React.Component {
 
       // In rare cases, it’s okay to initialize state based on props.
       // This effectively “forks” the props and sets the state with the initial props.
-      // If you “fork” props by using them for state, you might also want to implement componentWillReceiveProps(nextProps)
+      // If you “fork” props by using them for state, you might also want to implement
+      // componentWillReceiveProps(nextProps)
       // to keep the state up-to-date with them. But lifting state up is often easier and less bug-prone.
       color: props.initialColor
     };
@@ -112,7 +114,8 @@ class Component extends React.Component {
   // Invoked immediately after a component is mounted.
   // Initialization that requires DOM nodes should go here.
   // If you need to load data from a remote endpoint, this is a good place to instantiate the network request.
-  // This method is a good place to set up any subscriptions. If you do that, don’t forget to unsubscribe in componentWillUnmount().
+  // This method is a good place to set up any subscriptions. If you do that, don’t forget to unsubscribe
+  // in componentWillUnmount().
   componentDidMount() { }
 
   // Invoked before a mounted component receives new props.
@@ -121,22 +124,27 @@ class Component extends React.Component {
   componentWillReceiveProps(nextProps) { }
 
   // Let React know if a component’s output is not affected by the current change in state or props.
-  // The default behavior is to re-render on every state change, and in the vast majority of cases you should rely on the default behavior.
-  // shouldComponentUpdate() is invoked before rendering when new props or state are being received. Defaults to true.
+  // The default behavior is to re-render on every state change, and in the vast majority of cases you 
+  // should rely on the default behavior.
+  // shouldComponentUpdate() is invoked before rendering when new props or state are being received. 
+  // Defaults to true.
   // This method is not called for the initial render or when forceUpdate() is used.
   // Returning false does not prevent child components from re-rendering when their state changes.
   shouldComponentUpdate(nextProps, nextState) { }
 
   // Invoked just before rendering when new props or state are being received.
-  // Use this as an opportunity to perform preparation before an update occurs. This method is not called for the initial render.
+  // Use this as an opportunity to perform preparation before an update occurs. This method is
+  // not called for the initial render.
   // Note that you cannot call this.setState() here; nor should you do anything else
-  // (e.g. dispatch a Redux action) that would trigger an update to a React component before componentWillUpdate() returns.
+  // (e.g. dispatch a Redux action) that would trigger an update to a React component before
+  // componentWillUpdate() returns.
   // If you need to update state in response to props changes, use componentWillReceiveProps() instead.
   componentWillUpdate(nextProps, nextState) { }
 
   // Invoked immediately after updating occurs. This method is not called for the initial render.
   // Use this as an opportunity to operate on the DOM when the component has been updated.
-  // This is also a good place to do network requests as long as you compare the current props to previous props (e.g. a network request may not be necessary if the props have not changed).
+  // This is also a good place to do network requests as long as you compare the current props to 
+  // previous props (e.g. a network request may not be necessary if the props have not changed).
   componentDidUpdate(prevProps, prevState) { }
 
   // Invoked immediately before a component is unmounted and destroyed.
@@ -144,9 +152,10 @@ class Component extends React.Component {
   // or cleaning up any subscriptions that were created in componentDidMount().
   componentWillUnmount() { }
 
-  // Error boundaries are React components that catch JavaScript errors anywhere in their child component tree,
-  // log those errors, and display a fallback UI instead of the component tree that crashed.
-  // Error boundaries catch errors during rendering, in lifecycle methods, and in constructors of the whole tree below them.
+  // Error boundaries are React components that catch JavaScript errors anywhere in their child 
+  // component tree, log those errors, and display a fallback UI instead of the component tree that crashed.
+  // Error boundaries catch errors during rendering, in lifecycle methods, and in constructors of 
+  // the whole tree below them.
   componentDidCatch() { }
 
   // This method is required.
@@ -184,8 +193,10 @@ Component.defaultProps = {
 component = new Component();
 
 // By default, when your component’s state or props change, your component will re-render.
-// If your render() method depends on some other data, you can tell React that the component needs re-rendering by calling forceUpdate().
-// Normally you should try to avoid all uses of forceUpdate() and only read from this.props and this.state in render().
+// If your render() method depends on some other data, you can tell React that the component needs 
+// re-rendering by calling forceUpdate().
+// Normally you should try to avoid all uses of forceUpdate() and only read from this.props and 
+// this.state in render().
 component.forceUpdate(callback)
 
 
